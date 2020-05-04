@@ -1,69 +1,42 @@
+ <!-- b{}[]`` -->
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="main.css"/>
 
-    <title>Covid-19</title>
+    <title>Live Corona Status</title>
+  </head>
+  <body >
+    <div class="total" id="total">
+       <center><h1 class="text-primary">World Status</h1>
 
-    <link rel="stylesheet" href="main.css">
-
-</head>
-
-<body onload="fetch()">
-
-    <?php
-        echo "asdadadadad";
-
-
-    ?>
-
-    <section class="corona-update container-fluid">
-
-        <div class="mb-3">
-            <h3 class="text-center text-uppercase">Covid-19 Update</h3>
-        </div>
-
-        <div class="table-responsive">
-
-            <table class="table table-borderd table-striped text-center" id="tbval">
-                <tr>
-                    <th>Country</th>
-                    <th>Country</th>
-                    <th>Country</th>
-                    <th>Country</th>
-                    <th>Country</th>
-                    <th>Country</th>
-                    <th>Country</th>
-
-                </tr>
-            </table>
-
-        </div>
-
-    </section>
-
-
-   
+  <div class="tb p-3 mb-2 bg-warning text-white" id="todayConfirm">Today Confirmed</div>
+  <div class="tb p-3 mb-2 bg-warning text-white" id="totalConfirm">Total Confirmed</div>
+  <div class="tb p-3 mb-2 bg-danger text-white" id="todayDeaths">Today Deaths</div>
 
 
 
-
-
-
-
-    <script src="main.js"></script>
+  <div class="tb p-3 mb-2 bg-danger text-white" id="totalDeaths">Total Deaths</div>
+  <div class="tb p-3 mb-2 bg-success text-white" id="todayRecovered">Today Recovered</div>
+  <div class="tb p-3 mb-2 bg-success text-white" id="totalRecovered">Total Recovered</div>
+</center>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-</body>
-
+    
+    <!-- Main JS -->
+    <script src="main.js"></script>
+  </body>
 </html>
