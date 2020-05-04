@@ -1,49 +1,36 @@
-function fetch(){
-    $.get("https://api.covid19api.com/summary",
-    
-    function (data){
-        var tbval = document.getElementById('tbval');
+// b{}[]``
 
-            for(var i=1; i(data['Countries'].length); i++){
-                var x = tbval.insertRow();
-                x.insertCell(0);
-                
+function runFetch(coronaData) {
+  const global = coronaData.Global;
+  const countries = coronaData.Countries; 
+  
+  // console.log(coronaData);
+   console.log(global);
+  // console.log(countries);
+  
+let tc =  document.getElementById('todayConfirm');
+let tcc = document.getElementById('totalConfirm');
 
-                tbval.rows[i].cells[0].innerHTML = data['Countries'][i-1]['Country'];
-                tbval.rows[i].cells[0].style.background = '#7a4a91';
-                tbval.rows[i].cells[0].style.color = '#ffff';
+let td = document.getElementById('todayDeaths');
+let tdd = document.getElementById('totalDeaths');
 
+let tr = document.getElementById('todayRecovered');
+let trr = document.getElementById('totalRecovered');
 
-                x.insertCell(1);
-                tbval.rows[i].cells[1].innerHTML = data['Countries'][i-1]['TotalConfirmed'];
-                tbval.rows[i].cells[1].style.background = '#4bb7d8';
+tc.innerHTML = `Today Confirmed : ${global.NewConfirmed}`
+tcc.innerHTML = `Total Confirmed : ${global.TotalConfirmed}`
 
+td.innerHTML = `Today Deaths : ${global.NewDeaths}`
+tdd.innerHTML = `Total Deaths : ${global.TotalDeaths}`
 
-                x.insertCell(2);
-                tbval.rows[i].cells[2].innerHTML = data['Countries'][i-1]['TotalRecovered'];
-                tbval.rows[i].cells[2].style.background = '#';
-
-
-                x.insertCell(3);
-                tbval.rows[i].cells[3].innerHTML = data['Countries'][i-1]['TotalDeaths'];
-                tbval.rows[i].cells[3].style.background = '#';
-
-
-                x.insertCell(4);
-                tbval.rows[i].cells[4].innerHTML = data['Countries'][i-1]['NewConfirmed'];
-                tbval.rows[i].cells[4].style.background = '#';
-
-
-                x.insertCell(5);
-                tbval.rows[i].cells[5].innerHTML = data['Countries'][i-1]['NewRecovered'];
-                tbval.rows[i].cells[5].style.background = '#';
-
-
-                x.insertCell(6);
-                tbval.rows[i].cells[6].innerHTML = data['Countries'][i-1]['NewDeaths'];
-                tbval.rows[i].cells[6].style.background = '#';
-            }
-        }
-    
-    )
+tr.innerHTML = `Today Recovered : ${global.NewRecovered}`
+trr.innerHTML = `Total Recovered : ${global.TotalRecovered}`
+  
 }
+
+fetch("https://api.covid19api.com/summary").then((apiData)=>{
+  return apiData.json();
+}).then((data)=>{
+  const coronaData = data;
+  runFetch(coronaData);
+})
