@@ -1,0 +1,21 @@
+/* b{}[] */
+
+/* Nokia 6 : 360x640 */
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/* h1{
+  margin: 10px auto;
+  width: 50%;
+} */
+
+.tb{
+  
+  display: inline-block;
+  width: 100%;
+  font-weight: bold;
+
+}
