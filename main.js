@@ -1,12 +1,19 @@
 // b{}[]``
 
-function runFetch(coronaData) {
+
+function getAllData() {
+  
+  
+  
+  
+  
+  function runFetch(coronaData) {
   const global = coronaData.Global;
   const countries = coronaData.Countries; 
   
   // console.log(coronaData);
    console.log(global);
-  // console.log(countries);
+   console.log(countries);
   
 let tc =  document.getElementById('todayConfirm');
 let tcc = document.getElementById('totalConfirm');
@@ -17,14 +24,52 @@ let tdd = document.getElementById('totalDeaths');
 let tr = document.getElementById('todayRecovered');
 let trr = document.getElementById('totalRecovered');
 
-tc.innerHTML = `Today Confirmed : ${global.NewConfirmed}`
+tc.innerHTML = `New Confirmed : ${global.NewConfirmed}`
 tcc.innerHTML = `Total Confirmed : ${global.TotalConfirmed}`
 
-td.innerHTML = `Today Deaths : ${global.NewDeaths}`
+td.innerHTML = `New Deaths : ${global.NewDeaths}`
 tdd.innerHTML = `Total Deaths : ${global.TotalDeaths}`
 
-tr.innerHTML = `Today Recovered : ${global.NewRecovered}`
+tr.innerHTML = `New Recovered : ${global.NewRecovered}`
 trr.innerHTML = `Total Recovered : ${global.TotalRecovered}`
+
+
+
+let table = document.getElementById('table');
+
+for( i=1; i<249; i++){
+ 
+ let x = table.insertRow();
+ 
+ x.insertCell(0);
+ table.rows[i].cells[0].innerHTML = countries[i-1].Country;
+ table.rows[i].cells[0].style.background = '#0275d8';
+ 
+ x.insertCell(1);
+ table.rows[i].cells[1].innerHTML = countries[i-1].NewConfirmed;
+ table.rows[i].cells[1].style.background = '#f0ad4e';
+ 
+ x.insertCell(2);
+ table.rows[i].cells[2].innerHTML = countries[i-1].NewDeaths;
+ table.rows[i].cells[2].style.background = '#d9534f';
+ 
+ x.insertCell(3);
+ table.rows[i].cells[3].innerHTML = countries[i-1].NewRecovered;
+ table.rows[i].cells[3].style.background = '#5cb85c';
+ 
+ x.insertCell(4);
+ table.rows[i].cells[4].innerHTML = countries[i-1].TotalConfirmed;
+ table.rows[i].cells[4].style.background = '#f0ad4e';
+ 
+ x.insertCell(5);
+ table.rows[i].cells[5].innerHTML = countries[i-1].TotalDeaths;
+ table.rows[i].cells[5].style.background = '#d9534f';
+ 
+ x.insertCell(6);
+ table.rows[i].cells[6].innerHTML = countries[i-1].TotalRecovered;
+ table.rows[i].cells[6].style.background = '#5cb85c';
+ 
+}
   
 }
 
@@ -34,3 +79,14 @@ fetch("https://api.covid19api.com/summary").then((apiData)=>{
   const coronaData = data;
   runFetch(coronaData);
 })
+  
+  
+  
+  
+  
+}
+
+
+
+
+
