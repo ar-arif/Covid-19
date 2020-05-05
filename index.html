@@ -1,65 +1,85 @@
- <!-- b{}[]`` -->
-<!doctype html>
+<!-- b{}[]`` -->
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+
     <!-- Main CSS -->
-    <link rel="stylesheet" href="main.css"/>
+    <link rel="stylesheet" href="main.css" />
 
     <title>Live Corona Status</title>
   </head>
+
   <body onload="getAllData()">
     <div class="total container-fluid" id="total">
-       <center><h1 class="text-primary">World Status</h1>
+      <center>
+        <h1 class="text-primary">World Status</h1>
 
-  <div class="tb p-3 mb-2 bg-warning text-white" id="todayConfirm">Today Confirmed</div>
-  <div class="tb p-3 mb-2 bg-warning text-white" id="totalConfirm">Total Confirmed</div>
-  <div class="tb p-3 mb-2 bg-danger text-white" id="todayDeaths">Today Deaths</div>
+        <div class="tb p-3 mb-2 bg-warning text-white" id="todayConfirm">
+          Today Confirmed
+        </div>
+        <div class="tb p-3 mb-2 bg-warning text-white" id="totalConfirm">
+          Total Confirmed
+        </div>
+        <div class="tb p-3 mb-2 bg-danger text-white" id="todayDeaths">
+          Today Deaths
+        </div>
 
-
-
-  <div class="tb p-3 mb-2 bg-danger text-white" id="totalDeaths">Total Deaths</div>
-  <div class="tb p-3 mb-2 bg-success text-white" id="todayRecovered">Today Recovered</div>
-  <div class="tb p-3 mb-2 bg-success text-white" id="totalRecovered">Total Recovered</div>
-</center>
+        <div class="tb p-3 mb-2 bg-danger text-white" id="totalDeaths">
+          Total Deaths
+        </div>
+        <div class="tb p-3 mb-2 bg-success text-white" id="todayRecovered">
+          Today Recovered
+        </div>
+        <div class="tb p-3 mb-2 bg-success text-white" id="totalRecovered">
+          Total Recovered
+        </div>
+      </center>
     </div>
-    
-    
-    
+
+    <center>
+      <input
+        type="text"
+        id="myInput"
+        onkeyup="searchFun()"
+        placeholder="Search"
+      />
+    </center>
+
     <section class="container-fluid">
-      
-    
-    <table class="table table-responsive table-bordered table-striped text-center" id="table">
-      <tr>
-        <th style="background-color: #0275d8;">Country</th>
-        <th style="background-color: #f0ad4e;">New Confirmed</th>
-        <th style="background-color: #d9534f;">New Deaths</th>
-        <th style="background-color: #5cb85c;">New Recovered</th>
-        <th style="background-color: #f0ad4e;">Total Confirmed</th>
-        <th style="background-color: #d9534f;">Total Deaths</th>
-        <th style="background-color: #5cb85c;">Total Recovered</th>
-      </tr>
-      
-    </table>
-    
-    
+      <table
+        class="table table-responsive table-bordered table-striped text-center"
+        id="table"
+      >
+        <tr>
+          <th style="background-color: #0275d8;">Country</th>
+          <th style="background-color: #f0ad4e;">New Confirmed</th>
+          <th style="background-color: #d9534f;">New Deaths</th>
+          <th style="background-color: #5cb85c;">New Recovered</th>
+          <th style="background-color: #f0ad4e;">Total Confirmed</th>
+          <th style="background-color: #d9534f;">Total Deaths</th>
+          <th style="background-color: #5cb85c;">Total Recovered</th>
+        </tr>
+      </table>
     </section>
-    
-    
-    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    
+
     <!-- Main JS -->
     <script src="main.js"></script>
   </body>
