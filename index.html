@@ -14,8 +14,8 @@
 
     <title>Live Corona Status</title>
   </head>
-  <body >
-    <div class="total" id="total">
+  <body onload="getAllData()">
+    <div class="total container-fluid" id="total">
        <center><h1 class="text-primary">World Status</h1>
 
   <div class="tb p-3 mb-2 bg-warning text-white" id="todayConfirm">Today Confirmed</div>
@@ -29,6 +29,30 @@
   <div class="tb p-3 mb-2 bg-success text-white" id="totalRecovered">Total Recovered</div>
 </center>
     </div>
+    
+    
+    
+    <section class="container-fluid">
+      
+    
+    <table class="table table-responsive table-bordered table-striped text-center" id="table">
+      <tr>
+        <th style="background-color: #0275d8;">Country</th>
+        <th style="background-color: #f0ad4e;">New Confirmed</th>
+        <th style="background-color: #d9534f;">New Deaths</th>
+        <th style="background-color: #5cb85c;">New Recovered</th>
+        <th style="background-color: #f0ad4e;">Total Confirmed</th>
+        <th style="background-color: #d9534f;">Total Deaths</th>
+        <th style="background-color: #5cb85c;">Total Recovered</th>
+      </tr>
+      
+    </table>
+    
+    
+    </section>
+    
+    
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
